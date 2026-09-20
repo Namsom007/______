@@ -1,0 +1,67 @@
+:root {
+    --primary-color: #2E7D32;
+    --secondary-color: #66BB6A;
+    --bg-color: #F7F9F4;
+    --text-color: #333333;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text-success {
+    color: var(--primary-color) !important;
+}
+
+.btn-success {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-success:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-outline-success {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-success:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(247, 249, 244, 0.9), rgba(102, 187, 106, 0.7)), url('https://placehold.co/1920x600/2E7D32/FFF?text=GreenLeaf') center/cover;
+    padding: 100px 0;
+    color: #333;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.product-img {
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.category-img {
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+}
