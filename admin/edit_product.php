@@ -44,7 +44,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         if (in_array($file_ext, $allowed_ext)) {
             $image_name = uniqid() . '.' . $file_ext;
-            if (move_uploaded_file($_FILES['image']['tmp_name'], '../uploads/products/' . $image_name)) {
+            
+            $upload_dir = '../uploads/products/';
+            if (!is_dir($upload_dir)) {
+                mkdir($upload_dir, 0777, true);
+            }
+            
+            if (move_uploaded_file($_FILES['image']['tmp_name'], $upload_dir . $image_name)) {
                 $image_query_part = ", image = :img";
                 $params['img'] = $image_name;
                 

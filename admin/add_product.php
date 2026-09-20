@@ -27,7 +27,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         if (in_array($file_ext, $allowed_ext)) {
             $image_name = uniqid() . '.' . $file_ext;
-            move_uploaded_file($_FILES['image']['tmp_name'], '../uploads/products/' . $image_name);
+            
+            $upload_dir = '../uploads/products/';
+            if (!is_dir($upload_dir)) {
+                mkdir($upload_dir, 0777, true);
+            }
+            
+            move_uploaded_file($_FILES['image']['tmp_name'], $upload_dir . $image_name);
         } else {
             $error = "Invalid image format. Allowed: jpg, jpeg, png, webp";
         }
